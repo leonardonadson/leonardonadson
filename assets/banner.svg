@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Leonardo Nadson — Desenvolvedor Full-Stack e Mobile">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16161e"/>
+      <stop offset="1" stop-color="#211c36"/>
+    </linearGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7aa2f7"/>
+      <stop offset="0.55" stop-color="#bb9af7"/>
+      <stop offset="1" stop-color="#7dcfff"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#a9b1d6" opacity="0.10"/>
+    </pattern>
+    <filter id="blur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="55"/>
+    </filter>
+    <clipPath id="card"><rect width="1200" height="320" rx="20"/></clipPath>
+
+    <!-- "digitação": cada frase é revelada por um retângulo que cresce e encolhe -->
+    <clipPath id="t0"><rect x="128" y="196" height="44" width="0">
+      <animate attributeName="width" dur="12s" repeatCount="indefinite"
+        values="0;412;412;0;0" keyTimes="0;0.125;0.267;0.317;1"/></rect></clipPath>
+    <clipPath id="t1"><rect x="128" y="196" height="44" width="0">
+      <animate attributeName="width" dur="12s" repeatCount="indefinite"
+        values="0;0;344;344;0;0" keyTimes="0;0.333;0.458;0.6;0.65;1"/></rect></clipPath>
+    <clipPath id="t2"><rect x="128" y="196" height="44" width="0">
+      <animate attributeName="width" dur="12s" repeatCount="indefinite"
+        values="0;0;394;394;0;0" keyTimes="0;0.667;0.792;0.933;0.983;1"/></rect></clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <rect width="1200" height="320" fill="url(#dots)"/>
+
+    <!-- brilhos de fundo -->
+    <circle cx="1010" cy="40" r="150" fill="#bb9af7" opacity="0.32" filter="url(#blur)">
+      <animate attributeName="cy" dur="10s" repeatCount="indefinite" values="40;80;40"/>
+    </circle>
+    <circle cx="700" cy="330" r="130" fill="#7aa2f7" opacity="0.22" filter="url(#blur)">
+      <animate attributeName="cx" dur="14s" repeatCount="indefinite" values="700;780;700"/>
+    </circle>
+    <circle cx="60" cy="0" r="110" fill="#7dcfff" opacity="0.12" filter="url(#blur)"/>
+  </g>
+
+  <!-- barra de terminal -->
+  <circle cx="44" cy="38" r="7" fill="#f7768e"/>
+  <circle cx="68" cy="38" r="7" fill="#e0af68"/>
+  <circle cx="92" cy="38" r="7" fill="#9ece6a"/>
+  <text x="116" y="43" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14" fill="#565f89">leonardonadson@github:~</text>
+
+  <!-- saudação e nome -->
+  <text x="96" y="112" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#a9b1d6">Olá, eu sou 👋</text>
+  <text x="94" y="174" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="url(#grad)" letter-spacing="-1">Leonardo Nadson</text>
+
+  <!-- prompt + frases -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="28">
+    <text x="96" y="229" fill="#9ece6a">❯</text>
+    <text x="130" y="229" fill="#c0caf5" clip-path="url(#t0)">Desenvolvedor Full-Stack</text>
+    <text x="130" y="229" fill="#c0caf5" clip-path="url(#t1)">Desenvolvedor Mobile</text>
+    <text x="130" y="229" fill="#c0caf5" clip-path="url(#t2)">Kotlin · React · Spring</text>
+  </g>
+  <!-- cursor acompanha a digitação -->
+  <rect y="205" width="3" height="30" fill="#bb9af7">
+    <animate attributeName="x" dur="12s" repeatCount="indefinite"
+      values="132;540;540;132;132;470;470;132;132;520;520;132;132"
+      keyTimes="0;0.125;0.267;0.317;0.333;0.458;0.6;0.65;0.667;0.792;0.933;0.983;1"/>
+    <animate attributeName="opacity" dur="0.9s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.5;0.5;1"/>
+  </rect>
+
+  <rect x="96" y="262" width="140" height="4" rx="2" fill="url(#grad)"/>
+
+  <!-- janelinha de código -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 0;0 -6;0 0"/>
+    <rect x="770" y="62" width="380" height="206" rx="14" fill="#1a1b26" stroke="#292e42" stroke-width="1.5" opacity="0.96"/>
+    <line x1="770" y1="96" x2="1150" y2="96" stroke="#292e42" stroke-width="1.5"/>
+    <circle cx="792" cy="79" r="5" fill="#f7768e"/>
+    <circle cx="810" cy="79" r="5" fill="#e0af68"/>
+    <circle cx="828" cy="79" r="5" fill="#9ece6a"/>
+    <text x="1130" y="84" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" fill="#565f89">Dev.kt</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" xml:space="preserve">
+      <text x="792" y="126"><tspan fill="#bb9af7">val</tspan><tspan fill="#c0caf5"> dev = </tspan><tspan fill="#7aa2f7">Dev</tspan><tspan fill="#c0caf5">(</tspan></text>
+      <text x="792" y="150"><tspan fill="#c0caf5">  nome  = </tspan><tspan fill="#9ece6a">"Leonardo"</tspan><tspan fill="#c0caf5">,</tspan></text>
+      <text x="792" y="174"><tspan fill="#c0caf5">  foco  = </tspan><tspan fill="#9ece6a">"mobile + web"</tspan><tspan fill="#c0caf5">,</tspan></text>
+      <text x="792" y="198"><tspan fill="#c0caf5">  stack = </tspan><tspan fill="#7aa2f7">listOf</tspan><tspan fill="#c0caf5">(</tspan><tspan fill="#9ece6a">"Kotlin"</tspan><tspan fill="#c0caf5">, </tspan><tspan fill="#9ece6a">"React"</tspan><tspan fill="#c0caf5">),</tspan></text>
+      <text x="792" y="222"><tspan fill="#c0caf5">  aprendendo = </tspan><tspan fill="#ff9e64">true</tspan></text>
+      <text x="792" y="246"><tspan fill="#c0caf5">)</tspan></text>
+    </g>
+  </g>
+</svg>
